@@ -16,6 +16,7 @@ echo ---------- Building Solution
 msbuild.exe CM3D2.Toolkit\CM3D2.Toolkit.csproj /p:Platform=AnyCPU /p:Configuration=Release
 msbuild.exe CM3D2.Arc.Unpacker\CM3D2.Arc.Unpacker.csproj /p:Platform=AnyCPU /p:Configuration=Release
 msbuild.exe CM3D2.Arc.Packer\CM3D2.Arc.Packer.csproj /p:Platform=AnyCPU /p:Configuration=Release
+msbuild.exe CM3D2.Arc.Merger\CM3D2.Arc.Merger.csproj /p:Platform=AnyCPU /p:Configuration=Release
 msbuild.exe CM3D2.Toolkit.Docs\CM3D2.Toolkit.Docs.shfbproj /p:Configuration=Release
 echo ---------- Deleting Unwanted Data
 del bin\Release\FSharp.Core.dll
