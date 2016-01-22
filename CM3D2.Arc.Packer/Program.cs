@@ -140,6 +140,9 @@ namespace CM3D2.Arc.Packer
                 }
 
                 Utilities.CreateBackup(targetArc);
+                var targetDir = Path.GetDirectoryName(targetArc);
+                if (targetDir != null)
+                    Directory.CreateDirectory(targetDir);
                 using (var fs = File.Open(targetArc, FileMode.Create))
                     afs.Save(fs);
             }
