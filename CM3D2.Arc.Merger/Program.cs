@@ -108,7 +108,9 @@ namespace CM3D2.Arc.Merger
                               .Select(t =>
                               {
                                   var dirName = Path.GetFileNameWithoutExtension(t.File);
-                                  var outGlob = t.Glob.Replace(Program.WILDCARD, "merged");
+                                  var outGlob = t.Glob.IndexOf(Program.WILDCARD) < 0
+                                                    ? "merged"
+                                                    : t.Glob.Replace(Program.WILDCARD, "merged");
                                   var outGlobName = Path.GetFileNameWithoutExtension(outGlob);
                                   var ouputArc = args.OutputFile.Replace(Program.WILDCARD, outGlobName);
                                   var outputName = Path.GetFileNameWithoutExtension(ouputArc);
