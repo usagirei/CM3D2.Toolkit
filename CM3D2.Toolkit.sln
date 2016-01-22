@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM3D2.Toolkit", "CM3D2.Toolkit\CM3D2.Toolkit.csproj", "{682A6395-AC9A-4757-A9E1-E8FFEF42356A}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "CM3D2.Toolkit.Docs", "CM3D2.Toolkit.Docs\CM3D2.Toolkit.Docs.shfbproj", "{D2AFA700-4F2A-44AC-A442-426DE24B64FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{D99E7BEF-E45D-4592-8476-CBB2E0345A42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM3D2.Arc.Unpacker", "CM3D2.Arc.Unpacker\CM3D2.Arc.Unpacker.csproj", "{55FD9ADF-8383-4C8C-BFCA-C26C00F333D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM3D2.Arc.Packer", "CM3D2.Arc.Packer\CM3D2.Arc.Packer.csproj", "{E823CE7E-201D-4545-BF68-9C5AD37E1C3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM3D2.Arc.Merger", "CM3D2.Arc.Merger\CM3D2.Arc.Merger.csproj", "{F18835D2-E3E4-4727-AAFA-FC44DCABE09E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CM3D2.Utils.Common", "CM3D2.Utils.Common\CM3D2.Utils.Common.csproj", "{805CE366-8744-444D-B556-B2777B1A4613}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{682A6395-AC9A-4757-A9E1-E8FFEF42356A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{682A6395-AC9A-4757-A9E1-E8FFEF42356A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{682A6395-AC9A-4757-A9E1-E8FFEF42356A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{682A6395-AC9A-4757-A9E1-E8FFEF42356A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2AFA700-4F2A-44AC-A442-426DE24B64FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2AFA700-4F2A-44AC-A442-426DE24B64FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2AFA700-4F2A-44AC-A442-426DE24B64FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55FD9ADF-8383-4C8C-BFCA-C26C00F333D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55FD9ADF-8383-4C8C-BFCA-C26C00F333D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55FD9ADF-8383-4C8C-BFCA-C26C00F333D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55FD9ADF-8383-4C8C-BFCA-C26C00F333D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E823CE7E-201D-4545-BF68-9C5AD37E1C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E823CE7E-201D-4545-BF68-9C5AD37E1C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E823CE7E-201D-4545-BF68-9C5AD37E1C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E823CE7E-201D-4545-BF68-9C5AD37E1C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F18835D2-E3E4-4727-AAFA-FC44DCABE09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18835D2-E3E4-4727-AAFA-FC44DCABE09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18835D2-E3E4-4727-AAFA-FC44DCABE09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18835D2-E3E4-4727-AAFA-FC44DCABE09E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805CE366-8744-444D-B556-B2777B1A4613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805CE366-8744-444D-B556-B2777B1A4613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{805CE366-8744-444D-B556-B2777B1A4613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805CE366-8744-444D-B556-B2777B1A4613}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{55FD9ADF-8383-4C8C-BFCA-C26C00F333D2} = {D99E7BEF-E45D-4592-8476-CBB2E0345A42}
+		{E823CE7E-201D-4545-BF68-9C5AD37E1C3D} = {D99E7BEF-E45D-4592-8476-CBB2E0345A42}
+		{F18835D2-E3E4-4727-AAFA-FC44DCABE09E} = {D99E7BEF-E45D-4592-8476-CBB2E0345A42}
+		{805CE366-8744-444D-B556-B2777B1A4613} = {D99E7BEF-E45D-4592-8476-CBB2E0345A42}
+	EndGlobalSection
+EndGlobal
