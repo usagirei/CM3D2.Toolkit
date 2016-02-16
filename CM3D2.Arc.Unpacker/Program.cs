@@ -72,7 +72,7 @@ namespace CM3D2.Arc.Unpacker
                     var targetPath = Path.Combine(outDir, relativeName);
                     var targetDir = Path.GetDirectoryName(targetPath);
                     logger.Info("[{0}/{1}] Extracting '{2}'", cnt, tot, shortName);
-                    if (targetDir != null)
+                    if (!string.IsNullOrEmpty(targetDir))
                         Directory.CreateDirectory(targetDir);
                     File.WriteAllBytes(targetPath, ptr.Compressed ? ptr.Decompress().Data : ptr.Data);
                 }

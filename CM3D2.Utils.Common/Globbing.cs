@@ -4,11 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+// Built on top of http://stackoverflow.com/questions/398518/how-to-implement-glob-in-c-sharp
 namespace CM3D2.Utils.Common
 {
-/// <summary>
-/// Provides Globbing Methods
-/// </summary>
+    /// <summary>
+    ///     Provides Globbing Methods
+    /// </summary>
     public static class Globbing
     {
         /// <summary>
@@ -22,16 +23,44 @@ namespace CM3D2.Utils.Common
         }
 
         /// <summary>
-        ///     Converts a Wildcard Pattern into a Regular Expression
+        ///     Return a list of entries that matches a wildcard pattern
         /// </summary>
-        /// <param name="pattern"></param>
-        /// <returns></returns>
-        public static string WildcardToRegex(string pattern)
+        /// <param name="glob">Pattern to match</param>
+        /// <param name="mode">Globbing Mode</param>
+        /// <returns>All matching paths</returns>
+        public static IEnumerable<string> Glob(string glob, GlobMode mode)
         {
-            return "^" + Regex.Escape(pattern)
-                              .Replace(@"\*", ".*")
-                              .Replace(@"\?", ".")
-                       + "$";
+            return Glob(PathHead(glob) + Path.DirectorySeparatorChar, PathTail(glob), mode);
+        }
+
+        /// <summary>
+        ///     Returns a list of directories that match a wildcard pattern
+        /// </summary>
+        /// <param name="glob">Pattern to match</param>
+        /// <returns>All matching paths</returns>
+        public static IEnumerable<string> GlobDirs(string glob)
+        {
+            return Glob(glob, GlobMode.Directories);
+        }
+
+        /// <summary>
+        ///     Returns a list of files that match a wildcard pattern
+        /// </summary>
+        /// <param name="glob">Pattern to match</param>
+        /// <returns>All matching paths</returns>
+        public static IEnumerable<string> GlobFiles(string glob)
+        {
+            return Glob(glob, GlobMode.Files);
+        }
+
+        /// <summary>
+        ///     Returns a list of filess and directories that match a wildcard pattern
+        /// </summary>
+        /// <param name="glob">Pattern to match</param>
+        /// <returns>All matching paths</returns>
+        public static IEnumerable<string> GlobFilesAndDirs(string glob)
+        {
+            return Glob(glob, GlobMode.FilesAndDirectories);
         }
 
         /// <summary>
@@ -48,44 +77,16 @@ namespace CM3D2.Utils.Common
         }
 
         /// <summary>
-        ///     Return a list of entries that matches a wildcard pattern
+        ///     Converts a Wildcard Pattern into a Regular Expression
         /// </summary>
-        /// <param name="glob">Pattern to match</param>
-        /// <param name="mode">Globbing Mode</param>
-        /// <returns>All matching paths</returns>
-        public static IEnumerable<string> Glob(string glob, GlobMode mode)
+        /// <param name="pattern"></param>
+        /// <returns></returns>
+        public static string WildcardToRegex(string pattern)
         {
-            return Glob(PathHead(glob) + Path.DirectorySeparatorChar, PathTail(glob), mode);
-        }
-
-        /// <summary>
-        ///     Returns a list of files that match a wildcard pattern
-        /// </summary>
-        /// <param name="glob">Pattern to match</param>
-        /// <returns>All matching paths</returns>
-        public static IEnumerable<string> GlobFiles(string glob)
-        {
-            return Glob(glob, GlobMode.Files);
-        }
-
-        /// <summary>
-        ///     Returns a list of directories that match a wildcard pattern
-        /// </summary>
-        /// <param name="glob">Pattern to match</param>
-        /// <returns>All matching paths</returns>
-        public static IEnumerable<string> GlobDirs(string glob)
-        {
-            return Glob(glob, GlobMode.Directories);
-        }
-
-        /// <summary>
-        ///     Returns a list of filess and directories that match a wildcard pattern
-        /// </summary>
-        /// <param name="glob">Pattern to match</param>
-        /// <returns>All matching paths</returns>
-        public static IEnumerable<string> GlobFilesAndDirs(string glob)
-        {
-            return Glob(glob, GlobMode.FilesAndDirectories);
+            return "^" + Regex.Escape(pattern)
+                              .Replace(@"\*", ".*")
+                              .Replace(@"\?", ".")
+                   + "$";
         }
 
         /// <summary>
