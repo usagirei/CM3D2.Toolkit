@@ -33,7 +33,7 @@ namespace CM3D2.Arc.Unpacker
         private static void SubMain(Options opts)
         {
             var logger = new ConsoleLogger("UNPACK");
-            foreach (var file in opts.InputFiles)
+            foreach (var file in opts.GlobbedFiles)
             {
                 if (!File.Exists(file))
                 {
